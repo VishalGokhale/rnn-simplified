@@ -136,3 +136,12 @@ def clip(gradients, maxValue):
 
 
 clip_to_plus_minus_5 = lambda gradients: clip(gradients,5)
+
+def generate_sequences(no_of_sequences, char_to_index, index_to_char, parameters):
+    seed = 1
+    for name in range(no_of_sequences):
+        # Sample indices and print them
+        sampled_indices = sample(parameters, char_to_index, seed)
+        print_sample(sampled_indices, index_to_char)
+        seed += 1
+    print('\n')
